@@ -22,7 +22,9 @@ export default function RootLayout({ children }) {
         <header>
           <Header />
         </header>
-        <main className="max-w-[1130px] mx-auto pt-20">{children}</main>
+        <main className="max-w-7xl mx-auto pt-20 px-4 md:-6 lg:px-12">
+          {children}
+        </main>
 
         <footer></footer>
       </body>

@@ -31,7 +31,7 @@ export default function Header() {
     >
       <div
         className={cn(
-          "mx-auto max-w-full px-6 lg:px-12 transition-all duration-300",
+          "mx-auto max-w-full px-4 md:-6 lg:px-12 transition-all duration-300",
           isScrolled && "shadow1 bg-[#212428de]",
         )}
       >
