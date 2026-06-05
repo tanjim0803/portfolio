@@ -1,9 +1,17 @@
-import Image from "next/image";
+import Contacts from "@/components/home/Contacts";
+import Features from "@/components/home/Features";
+import LandingSection from "@/components/home/LandingSection";
+import Portfolio from "@/components/home/Portfolio";
+import Resume from "@/components/home/Resume";
 
 export default function Home() {
   return (
-    <>
-      <h1>Hello World!</h1>
-    </>
+    <div className="w-full">
+      <LandingSection />
+      <Features />
+      <Portfolio />
+      <Resume />
+      <Contacts />
+    </div>
   );
 }
