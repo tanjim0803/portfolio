@@ -2,10 +2,11 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function AnimatedText() {
   return (
-    <h2 className="text-white">
+    <h3 className="text-white">
       a Professional{" "}
       <span className="text-primary">
         <TypeAnimation
+          
           sequence={[
             "Web Developer",
             2000,
@@ -20,6 +21,6 @@ export default function AnimatedText() {
           cursor={true}
         />
       </span>
-    </h2>
+    </h3>
   );
 }

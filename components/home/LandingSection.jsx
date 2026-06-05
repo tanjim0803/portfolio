@@ -15,7 +15,7 @@ export default function LandingSection() {
         <div className="w-[60%]">
           <h5 className="uppercase text-lightn">welcome to my world</h5>
           <h1 className="text-white my-5">
-            Hi, {"I'am"} <span className="text-primary">MD. Omar Faruq</span>
+            Hi, {"I'am"} <span className="text-primary">Omar Faruq</span>
           </h1>
           <AnimatedText />
           <p className="text-lightn mt-6 leading-7 font-poppins">
