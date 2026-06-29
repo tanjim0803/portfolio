@@ -5,17 +5,18 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const menuItems = [
-  { name: "Home", href: "/" },
-  { name: "Features", href: "#features" },
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "Resume", href: "#resume" },
+  { id: "features", label: "Features" },
+  { id: "portfolio", label: "Portfolio" },
+  { id: "resume", label: "Resume" },
 ];
 
 export default function Header() {
   const [menuState, setMenuState] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { scrollToSection, activeSection } = useSmoothScroll();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,14 +59,34 @@ export default function Header() {
           <div className="w-full inset-0 m-auto hidden size-fit lg:block">
             <div className="flex items-center gap-10 justify-end">
               <ul className="flex gap-8 text-sm">
-                {menuItems.map((item, index) => (
-                  <li key={index}>
-                    <Link
-                      href={item.href}
-                      className="text-lightn hover:text-primary block duration-150 text-sm font-montserrat"
+                <li>
+                  <button
+                    onClick={() => scrollToSection("home")}
+                    className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out
+                    ${
+                      activeSection === "home"
+                        ? "bg-blue-100 text-blue-700"
+                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                    }`}
+                    // className="text-lightn hover:text-primary block duration-150 text-sm font-montserrat"
+                  >
+                    <span>Home</span>
+                  </button>
+                </li>
+                {menuItems.map((item) => (
+                  <li key={item.id}>
+                    <button
+                      onClick={() => scrollToSection(item.id)}
+                      className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out
+                    ${
+                      activeSection === item.id
+                        ? "bg-blue-100 text-blue-700"
+                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                    }`}
+                      // className="text-lightn hover:text-primary block duration-150 text-sm font-montserrat"
                     >
-                      <span>{item.name}</span>
-                    </Link>
+                      <span>{item.label}</span>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -78,11 +99,20 @@ export default function Header() {
                 <Button
                   asChild
                   size="sm"
-                  className="text-primary bg-bg-linear-2 shadow-shadow-1 py-5 px-7.5 rounded-sm uppercase text-sm"
+                  className="text-primary bg-bg-linear-2 hover:bg-bg-linear-2 hover:-translate-y-1 duration-300 shadow-shadow-1 py-5 px-7.5 rounded-sm uppercase text-sm"
                 >
-                  <Link href="#">
-                    <span>Contacts</span>
-                  </Link>
+                  <button
+                    onClick={() => scrollToSection("contact")}
+                    className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out
+                    ${
+                      activeSection === "contact"
+                        ? "bg-blue-100 text-blue-700"
+                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                    }`}
+                    // className="text-lightn hover:text-primary block duration-150 text-sm font-montserrat"
+                  >
+                    <span>{"Contact"}</span>
+                  </button>
                 </Button>
               </div>
             </div>
@@ -92,13 +122,13 @@ export default function Header() {
         <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
           <div className="lg:hidden">
             <ul className="space-y-6 text-base">
-              {menuItems.map((item, index) => (
-                <li key={index}>
+              {menuItems.map((item) => (
+                <li key={item.id}>
                   <Link
-                    href={item.href}
+                    href={item.id}
                     className="text-muted-foreground hover:text-accent-foreground block duration-150"
                   >
-                    <span>{item.name}</span>
+                    <span>{item.label}</span>
                   </Link>
                 </li>
               ))}

@@ -1,4 +1,4 @@
-import Contacts from "@/components/home/Contacts";
+import Contact from "@/components/home/Contact";
 import Features from "@/components/home/Features";
 import LandingSection from "@/components/home/LandingSection";
 import Portfolio from "@/components/home/Portfolio";
@@ -11,7 +11,7 @@ export default function Home() {
       <Features />
       <Portfolio />
       <Resume />
-      <Contacts />
+      <Contact />
     </div>
   );
 }

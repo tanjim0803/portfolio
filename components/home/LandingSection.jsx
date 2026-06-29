@@ -10,7 +10,7 @@ import AnimatedText from "./AnimatedText";
 
 export default function LandingSection() {
   return (
-    <section className="mt-25">
+    <section id="home" className="mt-25">
       <div className="flex justify-between items-center gap-30">
         <div className="w-[60%]">
           <h5 className="uppercase text-lightn">welcome to my world</h5>
@@ -63,7 +63,7 @@ export default function LandingSection() {
           <div className="h-[450px] w-full z- bg-bg-linear-1 shadow-shadow-1 relative rounded-sm"></div>
           <Image
             className="absolute bottom-0 z-10"
-            src="/assets/images/md-omar-faruq-updated.png"
+            src="/assets/images/md-omar-faruq-updated.webp"
             width={420}
             height={570}
             alt="MD. Omar Faruq"
