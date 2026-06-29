@@ -9,21 +9,21 @@ export default function TimelineCard({ item }) {
 
       <div className="flex items-start justify-between gap-4 mb-5 flex-wrap">
         <div>
-          <h4 className="text-2xl font-bold text-zinc-100 mb-1 group-hover:text-white transition-colors">
+          <h4 className="font-poppins text-2xl font-bold text-zinc-100 mb-1 group-hover:text-white transition-colors">
             {item.title}
           </h4>
-          <p className="text-sm text-zinc-400 font-medium">{item.subtitle}</p>
+          <p className="font-poppins text-sm text-body font-medium">{item.subtitle}</p>
         </div>
 
         {/* Right accent metadata badge */}
-        <span className="bg-[#141518] text-primary text-[11px] font-bold px-3 py-1.5 rounded shadow-inner tracking-wider">
+        <span className="font-poppins bg-[#141518] text-primary text-[11px] font-bold px-3 py-1.5 rounded shadow-inner tracking-wider">
           {item.badge}
         </span>
       </div>
 
       <hr className="border-zinc-800/60 my-4" />
 
-      <p className="text-zinc-400 text-base leading-relaxed font-light">
+      <p className="font-poppins text-body text-base leading-relaxed font-light">
         {item.description}
       </p>
     </div>

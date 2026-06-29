@@ -19,14 +19,14 @@ export default function LandingSection() {
           </h1>
           <AnimatedText />
           <p className="text-lightn mt-6 leading-7 font-poppins">
-            I use animation as a third dimension by which to simplify
-            experiences and kuiding thro each and every interaction. I’m not
-            adding motion just to spruce things up, but doing it in ways that.
+            I build modern, scalable web applications with Python, FastAPI,
+            React.js, and Next.js, focusing on performance, clean architecture,
+            and great user experiences.
           </p>
 
           <div className="flex justify-between items-center mt-20">
             <div>
-              <h5 className="text-lightn uppercase text-sm font-light">
+              <h5 className="text-lightn uppercase text-sm font-light font-poppins tracking-widest">
                 find with me
               </h5>
               <div className="flex justify-between items-center gap-8 mt-5">
@@ -42,7 +42,7 @@ export default function LandingSection() {
               </div>
             </div>
             <div>
-              <h5 className="text-lightn uppercase text-sm font-light">
+              <h5 className="text-lightn uppercase text-sm font-light font-poppins tracking-widest">
                 best skill on
               </h5>
               <div className="flex justify-between items-center gap-8 mt-5">

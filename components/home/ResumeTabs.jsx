@@ -53,19 +53,19 @@ export default function ResumeTabs() {
           <TabsList className="w-full shadow-shadow-1 bg-background-color-2 rounded-lg grid grid-cols-2 md:grid-cols-3 min-h-24 p-0">
             <TabsTrigger
               value="education"
-              className="py-8 cursor-pointer text-lightn rounded-lg text-lg font-semibold transition-all bg-transparent data-[state=active]:bg-background-color-2 data-[state=active]:text-primary hover:text-primary  data-[state=active]:shadow-shadow-1  hover:shadow-shadow-1"
+              className="font-poppins py-8 cursor-pointer text-lightn rounded-lg text-lg font-semibold transition-all bg-transparent data-[state=active]:bg-background-color-2 data-[state=active]:text-primary hover:text-primary  data-[state=active]:shadow-shadow-1  hover:shadow-shadow-1"
             >
               Education
             </TabsTrigger>
             <TabsTrigger
               value="skills"
-              className="py-8 cursor-pointer text-lightn rounded-lg text-lg font-semibold transition-all bg-transparent data-[state=active]:bg-background-color-2 data-[state=active]:text-primary hover:text-primary  data-[state=active]:shadow-shadow-1  hover:shadow-shadow-1"
+              className="font-poppins py-8 cursor-pointer text-lightn rounded-lg text-lg font-semibold transition-all bg-transparent data-[state=active]:bg-background-color-2 data-[state=active]:text-primary hover:text-primary  data-[state=active]:shadow-shadow-1  hover:shadow-shadow-1"
             >
               Professional Skills
             </TabsTrigger>
             <TabsTrigger
               value="experience"
-              className="py-8 cursor-pointer text-lightn rounded-lg text-lg font-semibold transition-all bg-transparent data-[state=active]:bg-background-color-2 data-[state=active]:text-primary hover:text-primary  data-[state=active]:shadow-shadow-1  hover:shadow-shadow-1"
+              className="font-poppins py-8 cursor-pointer text-lightn rounded-lg text-lg font-semibold transition-all bg-transparent data-[state=active]:bg-background-color-2 data-[state=active]:text-primary hover:text-primary  data-[state=active]:shadow-shadow-1  hover:shadow-shadow-1"
             >
               Experience
             </TabsTrigger>
@@ -77,7 +77,7 @@ export default function ResumeTabs() {
               {/* Left Column: Education Timeline */}
               <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-2 pl-6">
-                  <span className="text-xs font-bold tracking-wider text-primary">
+                  <span className="font-poppins text-xs font-bold tracking-wider text-primary">
                     1998 - 2010
                   </span>
                   <h3 className="text-3xl font-bold text-zinc-100">

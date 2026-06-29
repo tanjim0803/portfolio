@@ -1,44 +1,55 @@
 // hooks/useSmoothScroll.js
-"use client";
+import { useState, useEffect } from "react";
 
-import { useEffect, useCallback, useState } from "react";
+export function useSmoothScroll() {
+  const [activeSection, setActiveSection] = useState("home");
 
-export const useSmoothScroll = () => {
-  const [activeSection, setActiveSection] = useState("");
-
-  const scrollToSection = useCallback((elementId) => {
-    const element = document.getElementById(elementId);
+  // Smooth scroll handler
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({
+      // Offset matches the height of your sticky header (roughly 80px)
+      const offset = 80; 
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
         behavior: "smooth",
-        block: "start",
-      });
-      setActiveSection(elementId);
+        });
     }
-  }, []);
+  };
 
+  // Intersection Observer updates active tab as user scrolls naturally
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("[data-section]");
-      const scrollPosition = window.scrollY + 100;
+    const sectionIds = ["home", "features", "portfolio", "resume", "contact"];
+    const observers = [];
 
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute("id");
-
-        if (
-          scrollPosition >= sectionTop &&
-          scrollPosition < sectionTop + sectionHeight
-        ) {
-          setActiveSection(sectionId);
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
         }
       });
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const options = {
+      root: null,
+      rootMargin: "-40% 0px -50% 0px", // Triggers when section is roughly in the center
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, options);
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return { scrollToSection, activeSection };
-};
+}

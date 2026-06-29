@@ -58,6 +58,9 @@
   --color-lightn: var(--lightn);
   --color-bg-linear-1: var(--bg-linear-1);
   --color-bg-linear-2: var(--bg-linear-2);
+  --font-poppins: var(--font-poppins), sans-serif;
+  --font-montserrat: var(--font-montserrat), sans-serif;
+  --font-sans: var(--font-poppins), sans-serif;
 }
 
 :root {

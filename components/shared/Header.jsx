@@ -25,115 +25,148 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <nav
-      data-state={menuState && "active"}
-      className="fixed z-20 w-full bg-background-color-2"
+      data-state={menuState ? "active" : "inactive"}
+      className="fixed top-0 left-0 z-50 w-full bg-[#212428de] transition-all duration-300"
     >
       <div
         className={cn(
-          "mx-auto max-w-full px-4 md:-6 lg:px-12 transition-all duration-300",
-          isScrolled && "shadow1 bg-[#212428de]",
+          "mx-auto max-w-full px-4 md:px-6 lg:px-12 transition-all duration-300",
+          isScrolled && "shadow1 backdrop-blur-md",
         )}
       >
         <div className="relative flex items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
           <div className="flex justify-between items-center w-full">
-            <Link
-              href="/"
+            <button
+              onClick={() => scrollToSection("home")}
               aria-label="home"
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-2 cursor-pointer bg-transparent border-none"
             >
               <Logo />
-            </Link>
+            </button>
 
+            {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMenuState(!menuState)}
-              aria-label={menuState == true ? "Close Menu" : "Open Menu"}
-              className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+              aria-label={menuState ? "Close Menu" : "Open Menu"}
+              className="relative z-20 block cursor-pointer lg:hidden p-2 text-white"
             >
-              <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-              <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+              {menuState ? (
+                <X className="size-6" />
+              ) : (
+                <Menu className="size-6" />
+              )}
             </button>
           </div>
 
-          <div className="w-full inset-0 m-auto hidden size-fit lg:block">
+          {/* Desktop Navigation */}
+          <div className="w-full hidden lg:block">
             <div className="flex items-center gap-10 justify-end">
-              <ul className="flex gap-8 text-sm">
+              <ul className="flex gap-4 text-sm font-montserrat">
                 <li>
                   <button
                     onClick={() => scrollToSection("home")}
-                    className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out
-                    ${
-                      activeSection === "home"
-                        ? "bg-blue-100 text-blue-700"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-                    }`}
-                    // className="text-lightn hover:text-primary block duration-150 text-sm font-montserrat"
+                    className={cn(
+                      "px-4 py-2 rounded-lg text-sm tracking-wide uppercase transition-all duration-400 cursor-pointer text-body hover:text-primary",
+                      activeSection === "home" && "text-white",
+                    )}
                   >
-                    <span>Home</span>
+                    Home
                   </button>
                 </li>
                 {menuItems.map((item) => (
                   <li key={item.id}>
                     <button
                       onClick={() => scrollToSection(item.id)}
-                      className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out
-                    ${
-                      activeSection === item.id
-                        ? "bg-blue-100 text-blue-700"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-                    }`}
-                      // className="text-lightn hover:text-primary block duration-150 text-sm font-montserrat"
+                      className={cn(
+                        "px-4 py-2 rounded-lg text-sm tracking-wide uppercase transition-all duration-400 cursor-pointer text-body hover:text-primary",
+                        activeSection === item.id && "text-white",
+                      )}
                     >
-                      <span>{item.label}</span>
+                      {item.label}
                     </button>
                   </li>
                 ))}
               </ul>
-              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <Button asChild size="sm" className="hidden">
-                  <Link href="#">
-                    <span>Mode</span>
-                  </Link>
-                </Button>
+
+              {/* Action Button */}
+              <div className="flex w-fit">
                 <Button
-                  asChild
+                  onClick={() => scrollToSection("contact")}
                   size="sm"
-                  className="text-primary bg-bg-linear-2 hover:bg-bg-linear-2 hover:-translate-y-1 duration-300 shadow-shadow-1 py-5 px-7.5 rounded-sm uppercase text-sm"
+                  className={cn(
+                    "text-primary bg-transparent hover:bg-transparent font-montserrat font-semibold tracking-wider shadow-shadow-1 p-6 rounded-lg uppercase text-sm cursor-pointer transition-all duration-300 hover:-translate-y-1",
+                    activeSection === "contact" &&
+                      "bg-background-color-2 shadow-shadow-2",
+                  )}
                 >
-                  <button
-                    onClick={() => scrollToSection("contact")}
-                    className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ease-in-out
-                    ${
-                      activeSection === "contact"
-                        ? "bg-blue-100 text-blue-700"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
-                    }`}
-                    // className="text-lightn hover:text-primary block duration-150 text-sm font-montserrat"
-                  >
-                    <span>{"Contact"}</span>
-                  </button>
+                  Contact
                 </Button>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-          <div className="lg:hidden">
-            <ul className="space-y-6 text-base">
-              {menuItems.map((item) => (
-                <li key={item.id}>
-                  <Link
-                    href={item.id}
-                    className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                  >
-                    <span>{item.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* Mobile Navigation Dropdown Overlay */}
+        <div
+          className={cn(
+            "absolute top-full left-0 w-full bg-background-color-2 border-b border-neutral-800 p-6 shadow-2xl transition-all duration-300 transform origin-top lg:hidden",
+            menuState
+              ? "opacity-100 scale-y-100 block"
+              : "opacity-0 scale-y-0 hidden",
+          )}
+        >
+          <ul className="space-y-4 font-montserrat font-medium">
+            <li>
+              <button
+                onClick={() => {
+                  scrollToSection("home");
+                  setMenuState(false);
+                }}
+                className={cn(
+                  "block w-full text-left py-2 px-4 rounded-md",
+                  activeSection === "home"
+                    ? "text-primary bg-neutral-900"
+                    : "text-neutral-400",
+                )}
+              >
+                Home
+              </button>
+            </li>
+            {menuItems.map((item) => (
+              <li key={item.id}>
+                <button
+                  onClick={() => {
+                    scrollToSection(item.id);
+                    setMenuState(false);
+                  }}
+                  className={cn(
+                    "block w-full text-left py-2 px-4 rounded-md",
+                    activeSection === item.id
+                      ? "text-primary bg-neutral-900"
+                      : "text-neutral-400",
+                  )}
+                >
+                  {item.label}
+                </button>
+              </li>
+            ))}
+            <li>
+              <button
+                onClick={() => {
+                  scrollToSection("contact");
+                  setMenuState(false);
+                }}
+                className={cn(
+                  "block w-full text-left py-2 px-4 rounded-md text-primary font-bold",
+                )}
+              >
+                Contact
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>

@@ -133,7 +133,7 @@ function ProjectGrid({ items }) {
           <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-[#222328] flex items-center justify-center mb-6">
             {project.isLocked ? (
               <div className="w-12 h-12 rounded-full bg-[#1b1c21] flex items-center justify-center shadow-lg">
-                <Lock className="w-5 h-5 text-zinc-400" />
+                <Lock className="w-5 h-5 text-body" />
               </div>
             ) : (
               <img
@@ -144,7 +144,7 @@ function ProjectGrid({ items }) {
             )}
 
             {/* Context/Action Icons positioned at top-right corner */}
-            <div className="absolute top-4 right-4 text-zinc-400 bg-[#1b1c21]/60 p-1.5 rounded-md backdrop-blur-sm">
+            <div className="absolute top-4 right-4 text-body bg-[#1b1c21]/60 p-1.5 rounded-md backdrop-blur-sm">
               {project.iconType === "grid" && <Grid className="w-4 h-4" />}
               {project.iconType === "info" && <Info className="w-4 h-4" />}
               {project.iconType === "external" && (
@@ -156,11 +156,11 @@ function ProjectGrid({ items }) {
           {/* Details & Info Footer */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between">
-              <span className="text-[11px] font-bold tracking-wider text-[#e91e63]">
+              <span className="text-[11px] font-bold tracking-wider text-primary font-poppins">
                 {project.tagLabel}
               </span>
-              <div className="flex items-center gap-1 text-xs text-zinc-400 font-medium">
-                <Heart className="w-3.5 h-3.5 text-zinc-400" />
+              <div className="flex items-center gap-1 text-xs text-body font-medium">
+                <Heart className="w-3.5 h-3.5 text-body" />
                 <span>{project.likes}</span>
               </div>
             </div>

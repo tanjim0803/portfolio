@@ -7,18 +7,20 @@ const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
 });
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-montserrat",
 });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} ${montserrat.className} bg-background-color-2`}
+        className={`${poppins.variable} ${montserrat.variable} font-sans bg-background-color-2`}
       >
         <header>
           <Header />

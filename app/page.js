@@ -6,7 +6,7 @@ import Resume from "@/components/home/Resume";
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="w-full font-montserrat">
       <LandingSection />
       <Features />
       <Portfolio />
