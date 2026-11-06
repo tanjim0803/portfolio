@@ -82,7 +82,7 @@
   --bg-linear-1: linear-gradient(to right bottom, #212428, #16181c);
   --bg-linear-2: linear-gradient(145deg, #1e2024, #23272b);
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(55.451% 0.2213 28.616);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -169,6 +169,10 @@
 }
 
 @layer components {
+  .main-container {
+    @apply max-w-7xl mx-auto px-4 md:px-6 lg:px-12;
+  }
+
   .sub-heading {
     @apply text-sm font-medium text-primary uppercase;
   }

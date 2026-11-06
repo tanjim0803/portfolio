@@ -1,15 +1,12 @@
-// hooks/useSmoothScroll.js
 import { useState, useEffect } from "react";
 
 export function useSmoothScroll() {
   const [activeSection, setActiveSection] = useState("home");
 
-  // Smooth scroll handler
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      // Offset matches the height of your sticky header (roughly 80px)
-      const offset = 80; 
+      const offset = 80;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -18,14 +15,11 @@ export function useSmoothScroll() {
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
-        });
+      });
     }
   };
-
-  // Intersection Observer updates active tab as user scrolls naturally
   useEffect(() => {
-    const sectionIds = ["home", "features", "portfolio", "resume", "contact"];
-    const observers = [];
+    const sectionIds = ["home", "features", "projects", "resume", "contact"];
 
     const handleIntersect = (entries) => {
       entries.forEach((entry) => {
@@ -37,7 +31,7 @@ export function useSmoothScroll() {
 
     const options = {
       root: null,
-      rootMargin: "-40% 0px -50% 0px", // Triggers when section is roughly in the center
+      rootMargin: "-40% 0px -50% 0px",
       threshold: 0,
     };
 

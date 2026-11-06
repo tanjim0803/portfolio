@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaReact } from "react-icons/fa";
-import { SlSocialFacebook } from "react-icons/sl";
+import { FaTelegramPlane } from "react-icons/fa";
 import { FiLinkedin } from "react-icons/fi";
-import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
+import { MdOutlineEmail } from "react-icons/md";
+import Link from "next/link";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -23,7 +23,6 @@ export default function ContactSection() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data Submitted:", formData);
-    // Handle submission logic here
   };
 
   return (
@@ -35,9 +34,9 @@ export default function ContactSection() {
           <div className="lg:col-span-2 bg-[#1e2024] p-8 rounded-2xl shadow-shadow-1 border border-transparent hover:border-zinc-800/50 transition-all duration-300 group w-full">
             <div className="w-full aspect-16/10 rounded-xl overflow-hidden mb-6 bg-[#222328]">
               <Image
-                src="/assets/images/contact-img.webp" // Placeholder shaking hands photo matching the theme
+                src="/assets/images/contact-img.webp"
                 alt="Contact Image"
-                className="w-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+                className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
                 width={500}
                 height={500}
               />
@@ -48,11 +47,14 @@ export default function ContactSection() {
                 <h3 className="text-3xl font-bold text-lightn tracking-tight">
                   MD. Omar Faruq
                 </h3>
-                <p className="text-body text-lg font-poppins mt-1">Software Engineer</p>
+                <p className="text-body text-lg font-poppins mt-1">
+                  Full-stack Web Developer
+                </p>
               </div>
 
               <p className="text-body text-lg leading-relaxed font-light font-poppins mt-2">
-                I am open to work any freelance project. Please connect with me via email, call or social accounts.
+                I am open to work any freelance project. Please connect with me
+                via email, call or social accounts.
               </p>
 
               <div className="flex flex-col gap-1 text-body text-lg font-poppins font-light mt-2">
@@ -75,16 +77,30 @@ export default function ContactSection() {
                 <h6 className="text-body font-light uppercase mb-4">
                   Find With Me
                 </h6>
-                <div className="flex items-center gap-8 mt-5">
-                  <div className="bg-bg-linear-1 p-4 rounded shadow-shadow-1 cursor-pointer hover:-translate-y-1 duration-300">
-                    <SlSocialFacebook className="size-7 text-white" />
-                  </div>
-                  <div className="bg-bg-linear-1 p-4 rounded shadow-shadow-1 cursor-pointer hover:-translate-y-1 duration-300">
-                    <FaXTwitter className="size-7 text-white" />
-                  </div>
-                  <div className="bg-bg-linear-1 p-4 rounded shadow-shadow-1 cursor-pointer hover:-translate-y-1 duration-300">
+                <div className="flex items-center gap-8 mt-8">
+                  <Link
+                    href={"https://www.linkedin.com/in/tanjim0803/"}
+                    target="_blank"
+                    className="bg-bg-linear-1 p-4 rounded shadow-shadow-1 cursor-pointer hover:-translate-y-1 duration-300"
+                  >
                     <FiLinkedin className="size-7 text-white" />
-                  </div>
+                  </Link>
+                  <Link
+                    href={"https://t.me/tanjim0803"}
+                    target="_blank"
+                    className="bg-bg-linear-1 p-4 rounded shadow-shadow-1 cursor-pointer hover:-translate-y-1 duration-300"
+                  >
+                    <FaTelegramPlane className="size-7 text-white" />
+                  </Link>
+                  <Link
+                    href={
+                      "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=tanjimahmed1905@gmail.com"
+                    }
+                    target="_blank"
+                    className="bg-bg-linear-1 p-4 rounded shadow-shadow-1 cursor-pointer hover:-translate-y-1 duration-300"
+                  >
+                    <MdOutlineEmail className="size-7 text-white" />
+                  </Link>
                 </div>
               </div>
             </div>

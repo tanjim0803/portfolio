@@ -9,7 +9,7 @@ import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const menuItems = [
   { id: "features", label: "Features" },
-  { id: "portfolio", label: "Portfolio" },
+  { id: "projects", label: "Projects" },
   { id: "resume", label: "Resume" },
 ];
 
@@ -29,12 +29,12 @@ export default function Header() {
   return (
     <nav
       data-state={menuState ? "active" : "inactive"}
-      className="fixed top-0 left-0 z-50 w-full bg-[#212428de] transition-all duration-300"
+      className="fixed top-0 left-0 z-50 w-full bg-transparent transition-all duration-300"
     >
       <div
         className={cn(
           "mx-auto max-w-full px-4 md:px-6 lg:px-12 transition-all duration-300",
-          isScrolled && "shadow1 backdrop-blur-md",
+          isScrolled && "shadow1 backdrop-blur-md bg-[#212428de]",
         )}
       >
         <div className="relative flex items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
@@ -97,7 +97,7 @@ export default function Header() {
                   onClick={() => scrollToSection("contact")}
                   size="sm"
                   className={cn(
-                    "text-primary bg-transparent hover:bg-transparent font-montserrat font-semibold tracking-wider shadow-shadow-1 p-6 rounded-lg uppercase text-sm cursor-pointer transition-all duration-300 hover:-translate-y-1",
+                    "text-primary bg-background-color-2 hover:bg-transparent font-montserrat font-semibold tracking-wider shadow-shadow-1 p-6 rounded-lg uppercase text-sm cursor-pointer transition-all duration-300 hover:-translate-y-1",
                     activeSection === "contact" &&
                       "bg-background-color-2 shadow-shadow-2",
                   )}

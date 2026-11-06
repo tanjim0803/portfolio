@@ -6,39 +6,16 @@ import { Heart, Lock, Info, Grid, ExternalLink } from "lucide-react"; // Using l
 const projectsData = [
   {
     id: 1,
-    category: "gallery",
-    tagLabel: "GALLERY",
+    category: "wordpress",
+    tagLabel: "SlatoApp",
     title: "NFT Dashboard Application Development.",
     likes: "1803",
     image:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60", // Replace with your actual dashboard assets
-    isLocked: false,
-    iconType: "grid",
-  },
-  {
-    id: 2,
-    category: "video",
-    tagLabel: "VIDEO",
-    title: "Online Food Delivery Mobile App Design.",
-    likes: "**",
-    image: "",
-    isLocked: true,
-    iconType: "info",
-  },
-  {
-    id: 3,
-    category: "external",
-    tagLabel: "EXTERNAL LINK",
-    title: "Travel App Design Creativity & Application.",
-    likes: "847",
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&auto=format&fit=crop&q=60",
-    isLocked: false,
-    iconType: "external",
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
   },
 ];
 
-export function PortfolioTabs() {
+export function ProjectsTabs() {
   return (
     <div className="w-full mt-15">
       <Tabs
@@ -131,26 +108,11 @@ function ProjectGrid({ items }) {
         >
           {/* Top Media / Thumbnail Area */}
           <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-[#222328] flex items-center justify-center mb-6">
-            {project.isLocked ? (
-              <div className="w-12 h-12 rounded-full bg-[#1b1c21] flex items-center justify-center shadow-lg">
-                <Lock className="w-5 h-5 text-body" />
-              </div>
-            ) : (
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
-              />
-            )}
-
-            {/* Context/Action Icons positioned at top-right corner */}
-            <div className="absolute top-4 right-4 text-body bg-[#1b1c21]/60 p-1.5 rounded-md backdrop-blur-sm">
-              {project.iconType === "grid" && <Grid className="w-4 h-4" />}
-              {project.iconType === "info" && <Info className="w-4 h-4" />}
-              {project.iconType === "external" && (
-                <ExternalLink className="w-4 h-4" />
-              )}
-            </div>
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
 
           {/* Details & Info Footer */}
@@ -158,11 +120,9 @@ function ProjectGrid({ items }) {
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-bold tracking-wider text-primary font-poppins">
                 {project.tagLabel}
+                {", "}
+                {project.tagLabel}
               </span>
-              <div className="flex items-center gap-1 text-xs text-body font-medium">
-                <Heart className="w-3.5 h-3.5 text-body" />
-                <span>{project.likes}</span>
-              </div>
             </div>
 
             <h3 className="text-xl font-bold text-zinc-100 tracking-tight leading-snug mb-2 group-hover:text-white transition-colors">

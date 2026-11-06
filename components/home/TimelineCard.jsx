@@ -23,7 +23,7 @@ export default function TimelineCard({ item }) {
 
       <hr className="border-zinc-800/60 my-4" />
 
-      <p className="font-poppins text-body text-base leading-relaxed font-light">
+      <p className="font-poppins text-body text-lg leading-relaxed">
         {item.description}
       </p>
     </div>
