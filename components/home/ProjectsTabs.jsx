@@ -13,6 +13,69 @@ const projectsData = [
     image:
       "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
   },
+  {
+    id: 2,
+    category: "wordpress",
+    tagLabel: "SlatoApp",
+    title: "NFT Dashboard Application Development.",
+    likes: "1803",
+    image:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+  },
+  {
+    id: 3,
+    category: "wordpress",
+    tagLabel: "SlatoApp",
+    title: "NFT Dashboard Application Development.",
+    likes: "1803",
+    image:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+  },
+  {
+    id: 4,
+    category: "wordpress",
+    tagLabel: "SlatoApp",
+    title: "NFT Dashboard Application Development.",
+    likes: "1803",
+    image:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+  },
+  {
+    id: 5,
+    category: "wordpress",
+    tagLabel: "SlatoApp",
+    title: "NFT Dashboard Application Development.",
+    likes: "1803",
+    image:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+  },
+  {
+    id: 6,
+    category: "wordpress",
+    tagLabel: "SlatoApp",
+    title: "NFT Dashboard Application Development.",
+    likes: "1803",
+    image:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+  },
+  {
+    id: 7,
+    category: "wordpress",
+    tagLabel: "SlatoApp",
+    title: "NFT Dashboard Application Development.",
+    likes: "1803",
+    image:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+  },
+  {
+    id: 8,
+    category: "wordpress",
+    tagLabel: "SlatoApp",
+    title: "NFT Dashboard Application Development.",
+    likes: "1803",
+    image:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+  },
 ];
 
 export function ProjectsTabs() {

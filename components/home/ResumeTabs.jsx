@@ -39,7 +39,7 @@ export default function ResumeTabs() {
     <div className="w-full mt-15">
       <div className="mx-auto flex flex-col items-center">
         <Tabs
-          defaultValue="education"
+          defaultValue="skills"
           className="w-full flex flex-col items-center gap-16"
         >
           {/* Main Navigation Row */}
