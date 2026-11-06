@@ -1,6 +1,5 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Heart, Lock, Info, Grid, ExternalLink } from "lucide-react"; // Using lucide-react for matching layout icons
 
 // Mock Data matching your design
 const projectsData = [
@@ -9,7 +8,6 @@ const projectsData = [
     category: "wordpress",
     tagLabel: "SlatoApp",
     title: "NFT Dashboard Application Development.",
-    likes: "1803",
     image:
       "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
   },
@@ -18,7 +16,6 @@ const projectsData = [
     category: "wordpress",
     tagLabel: "SlatoApp",
     title: "NFT Dashboard Application Development.",
-    likes: "1803",
     image:
       "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
   },
@@ -27,7 +24,6 @@ const projectsData = [
     category: "wordpress",
     tagLabel: "SlatoApp",
     title: "NFT Dashboard Application Development.",
-    likes: "1803",
     image:
       "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
   },
@@ -36,7 +32,6 @@ const projectsData = [
     category: "wordpress",
     tagLabel: "SlatoApp",
     title: "NFT Dashboard Application Development.",
-    likes: "1803",
     image:
       "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
   },
@@ -45,7 +40,6 @@ const projectsData = [
     category: "wordpress",
     tagLabel: "SlatoApp",
     title: "NFT Dashboard Application Development.",
-    likes: "1803",
     image:
       "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
   },
@@ -54,7 +48,6 @@ const projectsData = [
     category: "wordpress",
     tagLabel: "SlatoApp",
     title: "NFT Dashboard Application Development.",
-    likes: "1803",
     image:
       "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
   },
@@ -63,7 +56,6 @@ const projectsData = [
     category: "wordpress",
     tagLabel: "SlatoApp",
     title: "NFT Dashboard Application Development.",
-    likes: "1803",
     image:
       "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
   },
@@ -72,7 +64,6 @@ const projectsData = [
     category: "wordpress",
     tagLabel: "SlatoApp",
     title: "NFT Dashboard Application Development.",
-    likes: "1803",
     image:
       "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
   },
