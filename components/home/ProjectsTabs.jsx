@@ -7,65 +7,109 @@ const projectsData = [
     id: 1,
     category: "wordpress",
     tagLabel: "SlatoApp",
-    title: "NFT Dashboard Application Development.",
+    title: "SLATO – An Interactive EdTech Platform",
     image:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+      "/assets/projects/SLATO-EXAMS.jpg",
+    link: "https://slatoapp.com/",
   },
   {
     id: 2,
     category: "wordpress",
-    tagLabel: "SlatoApp",
-    title: "NFT Dashboard Application Development.",
+    tagLabel: "Krishworks Tech",
+    title: "Krishworks Technology Innovations – An End-to-End IoT and Product Engineering Company",
     image:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+      "/assets/projects/krishworks-tech.jpg",
+    link: "https://krishworkstech.com/",
   },
   {
     id: 3,
     category: "wordpress",
-    tagLabel: "SlatoApp",
-    title: "NFT Dashboard Application Development.",
+    tagLabel: "Unuh",
+    title: "UNUH – A Gamified Mobile Learning Platform",
     image:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+      "/assets/projects/UNUH.jpg",
+    link: "https://krishworkstech.com/projects/scorm-based-lms-for-personal-development/",
   },
   {
     id: 4,
     category: "wordpress",
-    tagLabel: "SlatoApp",
-    title: "NFT Dashboard Application Development.",
+    tagLabel: "Krishworks Ed-Tech",
+    title: "Krishworks – An EdTech Organization Transforming Rural Education",
     image:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
-  },
-  {
-    id: 5,
-    category: "wordpress",
-    tagLabel: "SlatoApp",
-    title: "NFT Dashboard Application Development.",
-    image:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+      "/assets/projects/krishworksh-edtech.jpg",
+    link: "https://krishworks.com/",
   },
   {
     id: 6,
     category: "wordpress",
-    tagLabel: "SlatoApp",
-    title: "NFT Dashboard Application Development.",
+    tagLabel: "SyTrak",
+    title: "SYTRAK RTLS – An Industrial IoT and Real-Time Location Tracking Platform",
     image:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+      "/assets/projects/sytrak.jpg",
+    link: "https://sytrak.com/",
   },
   {
     id: 7,
-    category: "wordpress",
-    tagLabel: "SlatoApp",
-    title: "NFT Dashboard Application Development.",
+    category: "react",
+    tagLabel: "MFGWorkx",
+    title: "USA Job Board – A Job Search Platform Helping Job Seekers",
     image:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+      "/assets/projects/MFG-Worx.jpg",
+    link: "https://krishworkstech.com/projects/job-portal-for-blue-collar-workers/",
   },
   {
     id: 8,
-    category: "wordpress",
-    tagLabel: "SlatoApp",
+    category: "react",
+    tagLabel: "EnvisionNext",
     title: "NFT Dashboard Application Development.",
     image:
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60",
+      "/assets/projects/Envision.jpg",
+    link: "https://krishworkstech.com/projects/crm-app-for-real-estate/",
+  },
+  {
+    id: 9,
+    category: "react",
+    tagLabel: "RE2",
+    title: "NFT Dashboard Application Development.",
+    image:
+      "/assets/projects/RE2.jpg",
+    link: "https://krishworkstech.com/projects/attendance-tracking-app/",
+  },
+  {
+    id: 10,
+    category: "react",
+    tagLabel: "Al-Ghaith",
+    title: "LMS for Al-Ghaith – A Bilingual Corporate Learning Management System",
+    image:
+      "/assets/projects/Al-Ghaith.jpg",
+    link: "https://krishworkstech.com/projects/lms-for-training-progress-tracking/",
+  },
+  {
+    id: 11,
+    category: "react",
+    tagLabel: "Digital Vidya",
+    title: "Digital Vidya – A Mobile-Based Digital Marketing Learning Management System",
+    image:
+      "/assets/projects/Digital-vidya.webp",
+    link: "https://krishworkstech.com/projects/lms-for-digital-marketing/",
+  },
+  {
+    id: 12,
+    category: "react",
+    tagLabel: "Dorabhai",
+    title: "Dorabhai – A Digital Food Delivery Platform Connecting Customers with Local Restaurants",
+    image:
+      "/assets/projects/Dorabhai.jpg",
+    link: "https://krishworkstech.com/projects/selfstudy-app-for-college-students/",
+  },
+  {
+    id: 13,
+    category: "nextjs",
+    tagLabel: "BlackDiamond EA",
+    title: "BlackDiamond EA – An AI-Powered Automated Forex Trading Platform",
+    image:
+      "/assets/projects/blackdiamond-ea.jpg",
+    link: "https://blackdiamonea.vercel.app/",
   },
 ];
 
@@ -117,25 +161,25 @@ export function ProjectsTabs() {
 
         <TabsContent value="wordpress" className="w-full mt-0 outline-none">
           <ProjectGrid
-            items={projectsData.filter((p) => p.category === "external")}
+            items={projectsData.filter((p) => p.category === "wordpress")}
           />
         </TabsContent>
 
         <TabsContent value="react" className="w-full mt-0 outline-none">
           <ProjectGrid
-            items={projectsData.filter((p) => p.category === "gallery")}
+            items={projectsData.filter((p) => p.category === "react")}
           />
         </TabsContent>
 
         <TabsContent value="nextjs" className="w-full mt-0 outline-none">
           <ProjectGrid
-            items={projectsData.filter((p) => p.category === "image")}
+            items={projectsData.filter((p) => p.category === "nextjs")}
           />
         </TabsContent>
 
         <TabsContent value="fastapi" className="w-full mt-0 outline-none">
           <ProjectGrid
-            items={projectsData.filter((p) => p.category === "standard")}
+            items={projectsData.filter((p) => p.category === "fastapi")}
           />
         </TabsContent>
       </Tabs>
@@ -158,23 +202,21 @@ function ProjectGrid({ items }) {
       {items.map((project) => (
         <div
           key={project.id}
-          className="bg-[#1b1c21] rounded-2xl p-6 flex flex-col justify-between group cursor-pointer border border-transparent hover:border-zinc-800 transition-all duration-300 min-h-[420px]"
+          className="bg-[#1b1c21] rounded-2xl p-6 flex flex-col group cursor-pointer border border-transparent hover:border-zinc-800 transition-all duration-300 min-h-[420px]"
         >
           {/* Top Media / Thumbnail Area */}
-          <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-[#222328] flex items-center justify-center mb-6">
+          <a href={project.link} target="_blank" className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-[#222328] flex items-center justify-center mb-6">
             <img
               src={project.image}
               alt={project.title}
               className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
             />
-          </div>
+          </a>
 
           {/* Details & Info Footer */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-bold tracking-wider text-primary font-poppins">
-                {project.tagLabel}
-                {", "}
                 {project.tagLabel}
               </span>
             </div>
